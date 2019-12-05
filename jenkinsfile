@@ -1,5 +1,5 @@
 pipeline {
-   agent {docker 'maven:3.5-alpine'}
+   agent any
 
    stages {
       stage('Checkout') {
@@ -9,7 +9,7 @@ pipeline {
       }
       stage('build'){
           steps {
-              sh 'mv clean package'
+              sh 'mvn clean package'
           }
       }
    }
